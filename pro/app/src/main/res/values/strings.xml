@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Prototype</string>
+    <string name="title_activity_service2">ServiceActivity2</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_the">theActivity</string>
+    <string name="title_activity_image">imageActivity</string>
+    <string name="title_activity_input">inputActivity</string>
+    <string name="title_activity_assignment2">assignmentActivity2</string>
+    <string name="title_activity_import">importActivity</string>
+</resources>

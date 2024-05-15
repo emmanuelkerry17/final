@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/herobg"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/herobg"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Prototype"
+        tools:targetApi="31">
+        <activity
+            android:name=".importActivity"
+            android:exported="false"
+            android:label="@string/title_activity_import"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".assignmentActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_assignment2"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".inputActivity"
+            android:exported="false"
+            android:label="@string/title_activity_input"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".imageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_image"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".theActivity"
+            android:exported="false"
+            android:label="@string/title_activity_the"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_about"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".ServiceActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_service2"
+            android:theme="@style/Theme.Prototype" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Prototype">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
