@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
@@ -40,10 +41,10 @@ import net.ezra.navigation.ROUTE_DISPLAY
 data class Item(
 
     val imageUrl: String? = "",
-    val Price: String? = "",
-    val Freelancer: String? = "",
-    val Description: String? = "",
-    val Contact: String ="",
+    val studentName: String? = "",
+    val studentclass: String? = "",
+    val studentid: String? = "",
+    val studentresidence: String ="",
 
     )
 
@@ -71,7 +72,7 @@ class FirestoreViewModel : ViewModel() {
 
             val itemList = mutableListOf<Item>()
             snapshot?.documents?.forEach { document ->
-                val item = document.toObject(Item::class.java)?.copy(Price = document.id)
+                val item = document.toObject(Item::class.java)?.copy(studentclass = document.id)
                 item?.let {
                     itemList.add(it)
                 }
@@ -91,11 +92,11 @@ fun ItemList(items: List<Item>) {
             .fillMaxSize()
     ) {
 
-        Text(text = "Student List")
+
 
 
         LazyVerticalGrid(
-            columns = GridCells.Fixed(3),
+            columns =  GridCells.Fixed(3),
             modifier = Modifier
                 .padding(10.dp)
         ) {
@@ -108,7 +109,7 @@ fun ItemList(items: List<Item>) {
 
                             OutlinedButton(onClick = {
                                 val callIntent = Intent(Intent.ACTION_DIAL)
-                                callIntent.data = Uri.parse("tel:${item.Contact}")
+                                callIntent.data = Uri.parse("tel:${item.studentresidence}")
                                 mContext.startActivity(callIntent)
                             }) {
                                 Text(text = "Call")
@@ -124,15 +125,15 @@ fun ItemList(items: List<Item>) {
                             loading = {
                                 CircularProgressIndicator()
                             },
-                            contentDescription = item.Freelancer,
+                            contentDescription = item.imageUrl,
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.clip(RoundedCornerShape(10))
                         )
 
-                        item.Price?.let { Text(text = it) }
-                        item.Freelancer?.let { Text(text = it) }
-                        item.Description?.let { Text(text = it) }
-                        item.Contact?.let { Text(text = it) }
+                        item.studentName?.let { Text(text = it) }
+                        item.studentclass?.let { Text(text = it) }
+                        item.studentid?.let { Text(text = it) }
+                        item.studentresidence?.let { Text(text = it) }
 
                     }
 

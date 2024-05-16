@@ -22,8 +22,10 @@ import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.delay
 import net.ezra.R
 import net.ezra.navigation.ROUTE_HOME
+import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_POST
 import net.ezra.navigation.ROUTE_SHOW
+import net.ezra.navigation.ROUTE_SIGNFREE
 
 
 @Composable
